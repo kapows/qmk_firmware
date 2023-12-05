@@ -131,6 +131,10 @@ extern layer_state_t layer_state;
 #    include "process_combo.h"
 #endif
 
+#ifdef EZ_COMBO_ENABLE
+#    include "process_ez_combo.h"
+#endif
+
 #ifdef KEY_LOCK_ENABLE
 #    include "process_key_lock.h"
 #endif

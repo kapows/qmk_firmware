@@ -247,6 +247,9 @@ bool pre_process_record_quantum(keyrecord_t *record) {
 #ifdef COMBO_ENABLE
            process_combo(keycode, record) &&
 #endif
+#ifdef EZ_COMBO_ENABLE
+           process_ez_combo(keycode, record) &&
+#endif
            true;
 }
 

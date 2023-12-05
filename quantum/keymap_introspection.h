@@ -55,3 +55,21 @@ combo_t* combo_get_raw(uint16_t combo_idx);
 combo_t* combo_get(uint16_t combo_idx);
 
 #endif // defined(COMBO_ENABLE)
+
+#if defined(EZ_COMBO_ENABLE)
+
+// Forward declaration of combo_t so we don't need to deal with header reordering
+struct ez_combo_t;
+typedef struct ez_combo_t ez_combo_t;
+
+// Get the number of ez_combos defined in the user's keymap, stored in firmware rather than any other persistent storage
+uint16_t ez_combo_count_raw(void);
+// Get the number of ez_combos defined in the user's keymap, potentially stored dynamically
+uint16_t ez_combo_count(void);
+
+// Get the keycode for the encoder mapping location, stored in firmware rather than any other persistent storage
+ez_combo_t* ez_combo_get_raw(uint16_t ez_combo_idx);
+// Get the keycode for the encoder mapping location, potentially stored dynamically
+ez_combo_t* ez_combo_get(uint16_t ez_combo_idx);
+
+#endif // defined(EZ_COMBO_ENABLE)

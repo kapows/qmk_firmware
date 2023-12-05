@@ -91,3 +91,24 @@ __attribute__((weak)) combo_t* combo_get(uint16_t combo_idx) {
 }
 
 #endif // defined(COMBO_ENABLE)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// EZ Combos
+
+#if defined(EZ_COMBO_ENABLE)
+
+uint16_t ez_combo_count_raw(void) {
+    return sizeof(key_ez_combos) / sizeof(ez_combo_t);
+}
+__attribute__((weak)) uint16_t ez_combo_count(void) {
+    return ez_combo_count_raw();
+}
+
+ez_combo_t* ez_combo_get_raw(uint16_t ez_combo_idx) {
+    return &key_ez_combos[ez_combo_idx];
+}
+__attribute__((weak)) ez_combo_t* ez_combo_get(uint16_t ez_combo_idx) {
+    return ez_combo_get_raw(ez_combo_idx);
+}
+
+#endif // defined(EZ_COMBO_ENABLE)

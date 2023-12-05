@@ -606,6 +606,10 @@ void quantum_task(void) {
     combo_task();
 #endif
 
+#ifdef EZ_COMBO_ENABLE
+    ez_combo_task();
+#endif
+
 #ifdef LEADER_ENABLE
     leader_task();
 #endif
